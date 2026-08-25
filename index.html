@@ -1,29 +1,450 @@
-<div class="projects-grid">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melkamu Derso | Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    <!-- Project 1: INTERNSHIP MANAGEMENT SYSTEM -->
-    <div class="project-card">
-        <div class="title">Internship Placement & Management System</div>
-        <div class="stack">
-            <span>React</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span><span>JWT Auth</span><span>REST APIs</span>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6c63ff;
+            border-radius: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #1f1f1f;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .logo span {
+            color: #6c63ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #6c63ff;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #6c63ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: #b0b0b0;
+            margin-bottom: 8px;
+        }
+
+        #typed-text {
+            font-size: 20px;
+            color: #6c63ff;
+            font-weight: 600;
+            min-height: 40px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #9a9a9a;
+            margin: 20px 0 30px;
+            font-size: 16px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #6c63ff;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #5a52d5;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #333;
+        }
+        .btn-outline:hover {
+            border-color: #6c63ff;
+            color: #6c63ff;
+            transform: translateY(-3px);
+        }
+[8/25/2026 6:55 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #6c63ff;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 5px;
+        }
+
+        .section {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .about-grid .highlight {
+            color: #6c63ff;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background: #1a1a1a;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #2a2a2a;
+            transition: 0.3s;
+        }
+        .skill-tag:hover {
+            border-color: #6c63ff;
+            color: #fff;
+            background: #2a2a2a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #121212;
+            border: 1px solid #1f1f1f;
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #6c63ff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card .title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .project-card .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 12px 0;
+        }
+        .project-card .stack span {
+            background: #1f1f1f;
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #b0b0b0;
+            border: 1px solid #2a2a2a;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .project-card .desc {
+            color: #a5a5a5;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .project-card .badge {
+            display: inline-block;
+            background: #6c63ff22;
+            color: #6c63ff;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #aaa;
+            font-size: 28px;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            color: #6c63ff;
+            transform: scale(1.1);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #1a1a1a;
+            color: #555;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+[8/25/2026 6:55 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">&lt;<span>Melkamu</span>/&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://github.com/melaku-git" target="_blank"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Melkamu Derso</h1>
+            <p class="subtitle">Full-Stack & Mobile Developer</p>
+            <div id="typed-text"></div>
+            <p>
+                Computer Science Graduate from <strong>Bahir Dar University</strong> — Institute of Technology. 
+                I build scalable web apps and cross-platform mobile solutions.
+            </p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p style="margin-bottom: 15px;">
+                        👋 Hi, I'm <span class="highlight">Melkamu Derso</span>, a passionate software engineer 
+                        with a B.Sc. in Computer Science from <span class="highlight">Bahir Dar University</span>.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        I specialize in <strong>full-stack web development</strong> (React, Node.js, Laravel) and 
+                        <strong>mobile app development</strong> (Flutter, React Native). I also have a strong interest 
+                        in networking, IoT, and compiler design.
+                    </p>
+                    <p>
+                        🎯 My goal is to become a world-class tech innovator, solving real-world problems 
+                        through clean, efficient, and scalable code.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 10px;">🧰 Tech Toolbox</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1: INTERNSHIP MANAGEMENT SYSTEM -->
+                <div class="project-card">
+                    <div class="title">Internship Placement & Management System</div>
+                    <div class="stack">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span><span>JWT Auth</span><span>REST APIs</span>
+[8/25/2026 6:55 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: </div>
+                    <div class="desc">
+                        A full-stack web platform that seamlessly manages and controls intern students, host institutions, and university coordination. 
+                        It ensures interns gain effective, professional, and structured work experience through real-time tracking and institutional oversight.
+                    </div>
+                    <div class="badge">🎓 Final Year Project</div>
+                </div>
+
+                <!-- Project 2: SMART ATTENDANCE MOBILE -->
+                <div class="project-card">
+                    <div class="title">Smart Attendance System (Mobile)</div>
+                    <div class="stack">
+                        <span>Flutter</span><span>Dart</span><span>Android Studio</span><span>Biometrics</span><span>SQLite</span>
+                    </div>
+                    <div class="desc">
+                        A Flutter-based mobile application for university lecturers to efficiently track, monitor, and control student attendance in real-time. 
+                        Built with a seamless UI/UX on Android Studio to reduce manual roll-call errors and improve lecture accountability.
+                    </div>
+                    <div class="badge">📱 Mobile App</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">
+                I'm always open to discussing new projects, collaboration, or tech opportunities.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/melaku-git" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/melkamu-derso-85915a418" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://t.me/@falconn19" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="mailto:melkamuderso147@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+               
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2026 Melkamu Derso. Built with <i class="fas fa-heart" style="color: #6c63ff;"></i> and pure code.
         </div>
-        <div class="desc">
-            A full-stack web platform that seamlessly manages and controls intern students, host institutions, and university coordination. 
-            It ensures interns gain effective, professional, and structured work experience through real-time tracking and institutional oversight.
-        </div>
-        <div class="badge" style="margin-top:15px; display:inline-block; background:#6c63ff22; color:#6c63ff; font-size:12px; padding:4px 12px; border-radius:30px; font-weight:600;">🎓 Final Year Project</div>
     </div>
 
-    <!-- Project 2: SMART ATTENDANCE MOBILE -->
-    <div class="project-card">
-        <div class="title">Smart Attendance System (Mobile)</div>
-        <div class="stack">
-            <span>Flutter</span><span>Dart</span><span>Android Studio</span><span>Biometrics</span><span>SQLite</span>
-        </div>
-        <div class="desc">
-            A Flutter-based mobile application for university lecturers to efficiently track, monitor, and control student attendance in real-time. 
-            Built with a seamless UI/UX on Android Studio to reduce manual roll-call errors and improve lecture accountability.
-        </div>
-        <div class="badge" style="margin-top:15px; display:inline-block; background:#6c63ff22; color:#6c63ff; font-size:12px; padding:4px 12px; border-radius:30px; font-weight:600;">📱 Mobile App</div>
-    </div>
-
-</div>
+    <!-- Typed.js CDN for animated text -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('#typed-text', {
+            strings: [
+                'Building scalable web apps.',
+                'Creating cross-platform mobile apps.',
+                'Full-Stack Developer.',
+                'Mobile App Developer.',
+                'BDU CS Graduate.'
+            ],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true,
+            backDelay: 2000
+        });
+    </script>
+</body>
+</html>
