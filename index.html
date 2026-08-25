@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+[8/25/2026 11:06 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -18,7 +18,14 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
+            /* PREMIUM BACKGROUND: Deep mesh gradient + subtle grid */
+            background: #0a080f;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 200, 0.06) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
             color: #e5e5e5;
             line-height: 1.6;
             padding: 0 20px;
@@ -30,6 +37,7 @@
             padding: 20px 0;
         }
 
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -41,22 +49,14 @@
             border-radius: 10px;
         }
 
+        /* Navigation */
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff;
-        }
-        .logo span {
-            color: #6c63ff;
         }
 
         .nav-links {
@@ -75,6 +75,7 @@
             color: #6c63ff;
         }
 
+        /* Hero */
         .hero {
             display: flex;
             flex-direction: column;
@@ -89,7 +90,7 @@
             font-size: 52px;
             font-weight: 800;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #6c63ff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -103,7 +104,7 @@
 
         #typed-text {
             font-size: 20px;
-            color: #6c63ff;
+            color: #a78bfa;
             font-weight: 600;
             min-height: 40px;
         }
@@ -132,15 +133,15 @@
             border: none;
             cursor: pointer;
         }
-
-        .btn-primary {
+[8/25/2026 11:06 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: .btn-primary {
             background: #6c63ff;
             color: #fff;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
         }
         .btn-primary:hover {
             background: #5a52d5;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
         }
 
         .btn-outline {
@@ -153,7 +154,9 @@
             color: #6c63ff;
             transform: translateY(-3px);
         }
- .section-title {
+
+        /* Section Titles */
+        .section-title {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 40px;
@@ -173,16 +176,17 @@
 
         .section {
             padding: 60px 0;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
 
+        /* About */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
         .about-grid .highlight {
-            color: #6c63ff;
+            color: #a78bfa;
             font-weight: 600;
         }
 
@@ -193,37 +197,60 @@
             margin-top: 15px;
         }
         .skill-tag {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.04);
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 500;
-            border: 1px solid #2a2a2a;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: 0.3s;
         }
         .skill-tag:hover {
             border-color: #6c63ff;
             color: #fff;
-            background: #2a2a2a;
+            background: rgba(108, 99, 255, 0.15);
         }
 
+        /* Projects */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
 
         .project-card {
-            background: #121212;
-            border: 1px solid #1f1f1f;
-            border-radius: 16px;
-            padding: 25px;
-            transition: all 0.3s ease;
+            background: rgba(18, 18, 30, 0.7);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #6c63ff;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            transform: translateY(-10px);
+            border-color: rgba(108, 99, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(108, 99, 255, 0.15);
+        }
+
+        /* NEW: Project Logo / Icon */
+        .project-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6c63ff, #4f46e5);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover .project-logo {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 12px 35px rgba(108, 99, 255, 0.4);
         }
 
         .project-card .title {
@@ -239,31 +266,34 @@
             margin: 12px 0;
         }
         .project-card .stack span {
-            background: #1f1f1f;
-            font-size: 11px;
+            background: rgba(255, 255, 255, 0.06);
+[8/25/2026 11:06 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: font-size: 11px;
             padding: 4px 12px;
             border-radius: 20px;
             color: #b0b0b0;
-            border: 1px solid #2a2a2a;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             font-weight: 600;
             letter-spacing: 0.5px;
         }
         .project-card .desc {
-            color: #a5a5a5;
+            color: #b5b5c0;
             font-size: 14px;
             margin-top: 10px;
+            line-height: 1.7;
         }
         .project-card .badge {
             display: inline-block;
-            background: #6c63ff22;
-            color: #6c63ff;
+            background: rgba(108, 99, 255, 0.15);
+            color: #a78bfa;
             font-size: 12px;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 30px;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 15px;
+            border: 1px solid rgba(108, 99, 255, 0.1);
         }
 
+        /* Social Links */
         .social-links {
             display: flex;
             gap: 20px;
@@ -280,14 +310,16 @@
             transform: scale(1.1);
         }
 
+        /* Footer */
         .footer {
             text-align: center;
             padding: 40px 0;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             color: #555;
             font-size: 14px;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 36px;
@@ -296,17 +328,19 @@
                 grid-template-columns: 1fr;
             }
             nav {
-                flex-direction: column;
-                gap: 15px;
+                justify-content: center;
             }
             .nav-links {
                 gap: 15px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
- <div class="container">
+    <div class="container">
         <!-- Navigation -->
         <nav>
             <ul class="nav-links">
@@ -322,7 +356,6 @@
             <h1>Melkamu Derso</h1>
             <p class="subtitle">Full-Stack & Mobile Developer</p>
             <div id="typed-text"></div>
-           
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
@@ -347,7 +380,7 @@
                         🎯 My goal is to become a world-class tech innovator, solving real-world problems 
                         through clean, efficient, and scalable code.
                     </p>
-                </div>
+[8/25/2026 11:06 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: </div>
                 <div>
                     <h4 style="color: #fff; margin-bottom: 10px;">🧰 Tech Toolbox</h4>
                     <div class="skill-tags">
@@ -378,19 +411,23 @@
 
                 <!-- Project 1: INTERNSHIP MANAGEMENT SYSTEM -->
                 <div class="project-card">
+                    <!-- NEW LOGO ICON -->
+                    <div class="project-logo"><i class="fas fa-building-columns"></i></div>
                     <div class="title">Internship Placement & Management System</div>
                     <div class="stack">
                         <span>React</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span><span>JWT Auth</span><span>REST APIs</span>
-                      </div>
+                    </div>
                     <div class="desc">
                         A full-stack web platform that seamlessly manages and controls intern students, host institutions, and university coordination. 
                         It ensures interns gain effective, professional, and structured work experience through real-time tracking and institutional oversight.
                     </div>
-                    <div class="badge">🎓 web based system</div>
+                    <div class="badge">🎓 Web-Based System</div>
                 </div>
 
                 <!-- Project 2: SMART ATTENDANCE MOBILE -->
                 <div class="project-card">
+                    <!-- NEW LOGO ICON -->
+                    <div class="project-logo"><i class="fas fa-mobile-screen-button"></i></div>
                     <div class="title">Smart Attendance System (Mobile)</div>
                     <div class="stack">
                         <span>Flutter</span><span>Dart</span><span>Android Studio</span><span>Biometrics</span><span>SQLite</span>
@@ -413,10 +450,9 @@
             </p>
             <div class="social-links">
                 <a href="https://github.com/melaku-git" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/melkamu-derso-85915a418" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+[8/25/2026 11:06 PM] 𝙼𝚎𝚕𝚔𝚊𝚖𝚞: <a href="https://linkedin.com/in/melkamu-derso-85915a418" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://t.me/@falconn19" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                 <a href="mailto:melkamuderso147@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-               
             </div>
         </section>
 
