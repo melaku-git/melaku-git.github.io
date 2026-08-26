@@ -1,14 +1,27 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Melkamu Derso | Portfolio</title>
+    <title>Melkamu Derso | Full-Stack & Mobile Developer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <style>
+        /* --- CSS Variables for Easy Customization --- */
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #5a52d5;
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --text-light: #e8e8e8;
+            --text-muted: #a0a0b0;
+            --border-color: #1e1e2a;
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,17 +31,10 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* PREMIUM BACKGROUND: Deep mesh gradient + subtle grid */
-            background: #0a080f;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 200, 0.06) 0%, transparent 50%),
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
-            color: #e5e5e5;
+            background: var(--bg-dark);
+            color: var(--text-light);
             line-height: 1.6;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .container {
@@ -37,26 +43,23 @@
             padding: 20px 0;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #6c63ff;
-            border-radius: 10px;
-        }
-
-        /* Navigation */
+        /* --- Navigation --- */
         nav {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 20px 0 30px;
+            border-bottom: 1px solid var(--border-color);
             flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
@@ -65,284 +68,362 @@
             list-style: none;
         }
         .nav-links a {
-            color: #a0a0a0;
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
             font-size: 14px;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
         .nav-links a:hover {
-            color: #6c63ff;
+            color: var(--primary);
         }
 
-        /* Hero */
+        /* --- Hero Section --- */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 70vh;
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0 80px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
             font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
         }
 
         .hero .subtitle {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 400;
-            color: #b0b0b0;
-            margin-bottom: 8px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
         }
 
-        #typed-text {
-            font-size: 20px;
-            color: #a78bfa;
-            font-weight: 600;
-            min-height: 40px;
-        }
-
-        .hero p {
+        .hero .bio {
             max-width: 600px;
-            color: #9a9a9a;
-            margin: 20px 0 30px;
+            color: var(--text-muted);
             font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .hero .bio strong {
+            color: var(--text-light);
         }
 
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 12px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-         𝙼𝚎𝚕𝚔𝚊𝚖𝚞: .btn-primary {
-            background: #6c63ff;
+
+        .btn-primary {
+            background: var(--primary);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
         }
         .btn-primary:hover {
-            background: #5a52d5;
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
+            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            color: #fff;
-            border: 1px solid #333;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
         }
         .btn-outline:hover {
-            border-color: #6c63ff;
-            color: #6c63ff;
+            border-color: var(--primary);
+            color: var(--primary);
             transform: translateY(-3px);
         }
 
-        /* Section Titles */
+        /* --- Section Titles --- */
         .section-title {
             font-size: 32px;
             font-weight: 700;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 16px;
         }
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: #6c63ff;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            border-radius: 5px;
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 40px;
+            max-width: 650px;
         }
 
         .section {
             padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* About */
+        /* --- About / Skills Grid --- */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
         }
-        .about-grid .highlight {
-            color: #a78bfa;
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .about-text .highlight {
+            color: var(--primary);
             font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .skill-category h4 {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
         }
+
         .skill-tag {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 8px 16px;
+            background: var(--bg-card);
+            padding: 6px 14px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            transition: var(--transition);
         }
         .skill-tag:hover {
-            border-color: #6c63ff;
-            color: #fff;
-            background: rgba(108, 99, 255, 0.15);
+            border-color: var(--primary);
+            color: var(--text-light);
         }
 
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-        }
-
+        /* --- Project Cards (Case Study Style) --- */
         .project-card {
-            background: rgba(18, 18, 30, 0.7);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 50px;
+            transition: var(--transition);
+        }
+        .project-card:last-child {
+            margin-bottom: 0;
         }
         .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(108, 99, 255, 0.4);
-            box-shadow: 0 20px 50px rgba(108, 99, 255, 0.15);
+            border-color: rgba(108, 99, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
-        /* NEW: Project Logo / Icon */
-        .project-logo {
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .project-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #6c63ff, #4f46e5);
-            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary), #8b83ff);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
             font-size: 28px;
             color: #fff;
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover .project-logo {
-            transform: scale(1.05) rotate(-2deg);
-            box-shadow: 0 12px 35px rgba(108, 99, 255, 0.4);
+            flex-shrink: 0;
         }
 
-        .project-card .title {
-            font-size: 20px;
+        .project-title-group h3 {
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: #fff;
+            margin-bottom: 4px;
         }
-        .project-card .stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 12px 0;
-        }
-        .project-card .stack span {
-            background: rgba(255, 255, 255, 0.06);
-         𝙼𝚎𝚕𝚔𝚊𝚖𝚞: font-size: 11px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            color: #b0b0b0;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .project-card .desc {
-            color: #b5b5c0;
-            font-size: 14px;
-            margin-top: 10px;
-            line-height: 1.7;
-        }
-        .project-card .badge {
+        .project-title-group .project-badge {
             display: inline-block;
-            background: rgba(108, 99, 255, 0.15);
-            color: #a78bfa;
             font-size: 12px;
-            padding: 4px 14px;
-            border-radius: 30px;
             font-weight: 600;
-            margin-top: 15px;
+            background: rgba(108, 99, 255, 0.15);
+            color: var(--primary);
+            padding: 2px 14px;
+            border-radius: 30px;
             border: 1px solid rgba(108, 99, 255, 0.1);
         }
 
-        /* Social Links */
-        .social-links {
+        .project-stack {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0 20px;
+        }
+        .project-stack span {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin: 24px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-details-grid .detail-item h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .project-details-grid .detail-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .project-details-grid .detail-item ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .project-details-grid .detail-item ul li {
+            margin-bottom: 4px;
+            padding-left: 16px;
+            position: relative;
+        }
+        .project-details-grid .detail-item ul li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .project-image-placeholder {
+            background: #1a1a2a;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            border: 1px dashed var(--border-color);
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .project-image-placeholder i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* --- Contact Section --- */
+        .contact-links {
+            display: flex;
+            gap: 24px;
             flex-wrap: wrap;
             margin-top: 20px;
         }
-        .social-links a {
-            color: #aaa;
+        .contact-links a {
+            color: var(--text-muted);
             font-size: 28px;
-            transition: 0.3s;
+            transition: var(--transition);
         }
-        .social-links a:hover {
-            color: #6c63ff;
+        .contact-links a:hover {
+            color: var(--primary);
             transform: scale(1.1);
         }
 
-        /* Footer */
+        /* --- Footer --- */
         .footer {
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            color: #555;
+            padding: 40px 0 20px;
+            color: var(--text-muted);
             font-size: 14px;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
             .about-grid {
                 grid-template-columns: 1fr;
             }
+            .project-details-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+            .project-details-grid {
+                grid-template-columns: 1fr;
+            }
             nav {
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
             .nav-links {
-                gap: 15px;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            .projects-grid {
+            .project-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .skills-grid {
                 grid-template-columns: 1fr;
+            }
+            .project-card {
+                padding: 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+
         <!-- Navigation -->
         <nav>
+            <div class="logo">&lt;<span>Melkamu</span>/&gt;</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -354,11 +435,14 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>Melkamu Derso</h1>
-            <p class="subtitle">Full-Stack & Mobile Developer</p>
-            <div id="typed-text"></div>
+            <p class="subtitle">Full-Stack &amp; Mobile Developer</p>
+            <p class="bio">
+                B.Sc. in Computer Science from <strong>Bahir Dar University</strong> — Institute of Technology.
+                I craft end-to-end web and mobile solutions with a focus on clean code, real-time systems, and user-centric design.
+            </p>
             <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View My Work</a>
+                <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
             </div>
         </section>
 
@@ -366,39 +450,59 @@
         <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <div>
-                    <p style="margin-bottom: 15px;">
-                        I'm <span class="highlight">Melkamu Derso</span>, a passionate software engineer 
-                        with a B.Sc. in Computer Science from <span class="highlight">Bahir Dar University</span>.
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        I specialize in <strong>full-stack web development</strong> (React, Node.js, Laravel) and 
-                        <strong>mobile app development</strong> (Flutter, React Native). I also have a strong interest 
-                        in networking, IoT, and cyber security.
+                <div class="about-text">
+                    <p>
+                        I'm <span class="highlight">Melkamu Derso</span>, a software engineer passionate about building
+                        scalable applications. I specialize in <strong>full-stack web development</strong> (React, Node.js, Laravel)
+                        and <strong>cross-platform mobile development</strong> (Flutter, React Native).
                     </p>
                     <p>
-                        🎯 My goal is to become a world-class tech innovator, solving real-world problems 
-                        through clean, efficient, and scalable code.
+                        I also have a strong interest in <strong>networking, IoT, and cyber security</strong>, and I enjoy
+                        solving real-world problems through clean, efficient, and maintainable code.
+                    </p>
+                    <p>
+                        🎯 My goal is to become a world-class tech innovator, delivering high-impact solutions that bridge
+                        the gap between users and technology.
                     </p>
                 </div>
-                <div>
-                    <h4 style="color: #fff; margin-bottom: 10px;">🧰 Tech Toolbox</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Dart</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">IoT</span>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Frontend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Next.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">JWT</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Mobile</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Android Studio</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Database &amp; Cloud</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">IoT</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -406,78 +510,151 @@
 
         <!-- Projects Section -->
         <section id="projects" class="section">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
+            <h2 class="section-title">Full Stack Projects</h2>
+            <p class="section-subtitle">
+                Here are the key projects I've built, showcasing my ability to handle complex system design and delivery.
+            </p>
 
-                <!-- Project 1: INTERNSHIP MANAGEMENT SYSTEM -->
-                <div class="project-card">
-                    <!-- NEW LOGO ICON -->
-                    <div class="project-logo"><i class="fas fa-building-columns"></i></div>
-                    <div class="title">Internship Placement & Management System</div>
-                    <div class="stack">
-                        <span>React</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span><span>JWT Auth</span><span>REST APIs</span>
+            <!-- Project 1: Internship Management System -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon"><i class="fas fa-building-columns"></i></div>
+                    <div class="project-title-group">
+                        <h3>Internship Placement &amp; Management System</h3>
+                        <span class="project-badge">web based system</span>
                     </div>
-                    <div class="desc">
-                        A full-stack web platform that seamlessly manages and controls intern students, host institutions, and university coordination. 
-                        It ensures interns gain effective, professional, and structured work experience through real-time tracking and institutional oversight.
-                    </div>
-                    <div class="badge">🎓 Web-Based System</div>
                 </div>
 
-                <!-- Project 2: SMART ATTENDANCE MOBILE -->
-                <div class="project-card">
-                    <!-- NEW LOGO ICON -->
-                    <div class="project-logo"><i class="fas fa-mobile-screen-button"></i></div>
-                    <div class="title">Smart Attendance System (Mobile)</div>
-                    <div class="stack">
-                        <span>Flutter</span><span>Dart</span><span>Android Studio</span><span>Biometrics</span><span>SQLite</span>
-                    </div>
-                    <div class="desc">
-                        A Flutter-based mobile application for university lecturers to efficiently track, monitor, and control student attendance in real-time. 
-                        Built with a seamless UI/UX on Android Studio to reduce manual roll-call errors and improve lecture accountability.
-                    </div>
-                    <div class="badge">📱 Mobile App</div>
+                <p style="color: var(--text-muted); margin-bottom: 16px;">
+                    A full-stack web platform that seamlessly manages and controls intern students, host institutions, and university coordination.
+                    It ensures interns gain effective, professional, and structured work experience through real-time tracking and institutional oversight.
+                </p>
+
+                <div class="project-stack">
+                    <span>React</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span>
+                    <span>JWT Auth</span><span>REST APIs</span>
                 </div>
 
+                <div class="project-details-grid">
+                    <div class="detail-item">
+                        <h4>Frontend Architecture</h4>
+                        <ul>
+                            <li>React with TypeScript</li>
+                            <li>Role-based dashboards (Admin, Coordinator, Student)</li>
+                            <li>Real-time placement tracking</li>
+                            <li>Responsive UI for all devices</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Backend Systems</h4>
+                        <ul>
+                            <li>Node.js + Express REST API</li>
+                            <li>JWT authentication &amp; RBAC</li>
+                            <li>MongoDB data persistence</li>
+                            <li>Secure password hashing (bcrypt)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Centralized management for 100+ interns</li>
+                            <li>Automated progress reporting</li>
+                            <li>Reduced administrative workload by 40%</li>
+                            <li>Scalable system design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Replace this placeholder with your actual screenshot image -->
+                <div class="project-image-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>📸 Add your screenshot here</p>
+                    <p style="font-size: 12px; margin-top: 8px;">
+                        (Upload an image to this repository and replace this div with an <code>&lt;img&gt;</code> tag)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2: Smart Attendance System -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="project-title-group">
+                        <h3>Smart Attendance System (Mobile)</h3>
+                        <span class="project-badge"> Mobile App</span>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-muted); margin-bottom: 16px;">
+                    A Flutter-based mobile application for university lecturers to efficiently track, monitor, and control student attendance in real-time.
+                    Built with a seamless UI/UX on Android Studio to reduce manual roll-call errors and improve lecture accountability.
+                </p>
+
+                <div class="project-stack">
+                    <span>Flutter</span><span>Dart</span><span>Android Studio</span>
+                    <span>Biometrics</span><span>SQLite</span>
+                </div>
+
+                <div class="project-details-grid">
+                    <div class="detail-item">
+                        <h4>Frontend Features</h4>
+                        <ul>
+                            <li>Flutter UI with Material Design</li>
+                            <li>Real-time attendance tracking</li>
+                            <li>Biometric/Fingerprint authentication</li>
+                            <li>Offline-first with local SQLite storage</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Mobile Architecture</h4>
+                        <ul>
+                            <li>Clean MVVM architecture</li>
+                            <li>Local data persistence (SQLite)</li>
+                            <li>Bloc/Cubit state management</li>
+                            <li>Seamless sync when online</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Reduces roll-call time by 80%</li>
+                            <li>Prevents attendance fraud</li>
+                            <li>Works offline &amp; syncs later</li>
+                            <li>Intuitive lecturer dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Replace this placeholder with your actual screenshot image -->
+                <div class="project-image-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>📸 Add your screenshot here</p>
+                    <p style="font-size: 12px; margin-top: 8px;">
+                        (Upload an image to this repository and replace this div with an <code>&lt;img&gt;</code> tag)
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Let's Connect</h2>
-            <p style="margin-bottom: 20px; color: #aaa;">
-                I'm always open to discussing new projects, collaboration, or tech opportunities.
+        <section id="contact" class="section" style="border-bottom: none;">
+            <h2 class="section-title">Let's Build Something Amazing</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 24px;">
+                Looking for a developer who can architect and implement complete solutions? Let's discuss your project.
             </p>
-            <div class="social-links">
+            <div class="contact-links">
                 <a href="https://github.com/melaku-git" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
- <a href="https://linkedin.com/in/melkamu-derso-85915a418" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://linkedin.com/in/melkamu-derso-85915a418" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://t.me/@falconn19" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                 <a href="mailto:melkamuderso147@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://melaku-git.github.io" target="_blank" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
             </div>
         </section>
 
         <!-- Footer -->
         <div class="footer">
-            &copy; 2026 Melkamu Derso.
+            &copy; 2026 Melkamu Derso. 
         </div>
     </div>
-
-    <!-- Typed.js CDN for animated text -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        var typed = new Typed('#typed-text', {
-            strings: [
-                'Building scalable web apps.',
-                'Creating cross-platform mobile apps.',
-                'Full-Stack Developer.',
-                'Mobile App Developer.',
-                'BDU CS Graduate.'
-            ],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true,
-            backDelay: 2000
-        });
-    </script>
 </body>
 </html>
